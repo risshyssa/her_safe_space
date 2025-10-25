@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Safe Space for My Wife ❤️</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Patrick+Hand&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Floating sakura petals -->
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+
+  <!-- Pastel Header -->
+  <header class="pastel-header fade-in">
+    <div class="hearts">
+      <span>♡</span>
+      <span>♡</span>
+      <span>♡</span>
+    </div>
+    <h1>A Safe Space for My Wife ❤️</h1>
+    <p>you are loved, you are safe, you are never alone 🌸</p>
+  </header>
+
+  <!-- Love Letter -->
+  <section class="content fade-in">
+    <div class="love-letter">
+      <p>
+        Hello, my love! Here’s something I made to make you feel better when you feel like
+        you’re being pulled down — something to remind you that you’re not alone, now that
+        I’m here with you. You can access this website anytime, and I’ll be updating it each
+        day so you have something new to look at. I love you so so so sooo much, and I hope
+        this makes you feel better, my love. 💌
+      </p>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <h2 class="section-title fade-in">Our Moments 📸</h2>
+  <section class="photo-gallery fade-in">
+    <img src="images/photo1.jpg" alt="Memory 1">
+    <img src="images/photo2.jpg" alt="Memory 2">
+    <img src="images/photo3.jpg" alt="Memory 3">
+  </section>
+
+  <!-- Spotify Embed -->
+  <div class="spotify-player fade-in">
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/track/4whLOE7hwNIAykoMcSZmvO?utm_source=generator" 
+      width="100%" height="152" frameBorder="0" 
+      allowfullscreen="" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Made with love by Lance 💖 | You’ll Be Safe Here 🌷
+  </footer>
+
+  <!-- Secret Note Button -->
+  <button class="secret-btn" id="secret-btn"></button>
+  <div class="secret-panel" id="secret-panel">
+    <p>psst… I love you more than you’ll ever know 💞</p>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Fade-in animation on scroll
+    function showFadeIns() {
+      const elements = document.querySelectorAll('.fade-in');
+      const trigger = window.innerHeight * 0.9;
+
+      elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) el.classList.add('show');
+      });
+    }
+    window.addEventListener('scroll', showFadeIns);
+    window.addEventListener('load', showFadeIns);
+
+    // Secret note toggle
+    const btn = document.getElementById('secret-btn');
+    const panel = document.getElementById('secret-panel');
+    btn.addEventListener('click', () => {
+      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>

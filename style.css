@@ -1,0 +1,259 @@
+
+  /* 🌸 Aesthetic Scrapbook Theme */
+  :root {
+    --bg: #fff8f8;
+    --paper: #fffaf9;
+    --accent: #f6c8d8;
+    --muted: #775e64;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --radius: 20px;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(180deg, #ffeef3 0%, #fffaf9 100%);
+    font-family: 'Open Sans', sans-serif;
+    color: #4b3a3d;
+    overflow-x: hidden;
+  }
+
+  /* Background Sakura animation */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url('https://i.ibb.co/52Zhy5b/paper-texture.png'), linear-gradient(180deg, #ffdce5 0%, #fff 100%);
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -2;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(-10%) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; }
+  }
+
+  .petal {
+    position: fixed;
+    top: -10%;
+    background: rgba(255, 182, 193, 0.7);
+    width: 14px;
+    height: 14px;
+    border-radius: 50% 50% 50% 0;
+    animation: fall 10s linear infinite;
+    z-index: 1;
+  }
+
+  /* Random petals */
+  .petal:nth-child(1) { left: 10%; animation-duration: 13s; animation-delay: 0s; }
+  .petal:nth-child(2) { left: 30%; animation-duration: 11s; animation-delay: 2s; }
+  .petal:nth-child(3) { left: 50%; animation-duration: 15s; animation-delay: 4s; }
+  .petal:nth-child(4) { left: 70%; animation-duration: 12s; animation-delay: 1s; }
+  .petal:nth-child(5) { left: 90%; animation-duration: 14s; animation-delay: 3s; }
+
+  /* Main layout */
+  header {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  header h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #d36b8a;
+    font-size: 2.6em;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 8px rgba(255, 200, 215, 0.5);
+  }
+
+  header p {
+    color: #9c737b;
+    font-size: 1em;
+    margin-top: 6px;
+  }
+
+  .content {
+    background: var(--paper);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    width: 90%;
+    max-width: 750px;
+    padding: 24px;
+    margin: 30px auto;
+    position: relative;
+  }
+
+  .content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(3px);
+  }
+
+  .love-letter {
+    position: relative;
+    z-index: 2;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.3em;
+    line-height: 1.7;
+    color: #5a3b42;
+    text-align: center;
+  }
+
+  .section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8em;
+    color: #d86a8b;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .photo-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 30px 0;
+  }
+
+  .photo-gallery img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 18px rgba(0,0,0,0.1);
+    border: 6px solid #fff;
+    transition: transform 0.3s ease;
+  }
+
+  .photo-gallery img:hover {
+    transform: rotate(-3deg) scale(1.05);
+  }
+
+  .spotify-player {
+    text-align: center;
+    margin: 50px 0 20px;
+  }
+
+  iframe {
+    border-radius: 16px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #9e7b83;
+    margin: 40px 0 30px;
+  }
+
+  /* Secret button */
+  .secret-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: linear-gradient(145deg, #f8b5c9, #f5a3ba);
+    border: none;
+    padding: 14px;
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .secret-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 160, 180, 0.5);
+  }
+
+  .secret-btn::after {
+    content: '❤️';
+    font-size: 18px;
+  }
+
+  .secret-panel {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 260px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 16px;
+    display: none;
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 1.6s ease;
+  }
+
+  .fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 🌸 Pastel Header Bar */
+  .pastel-header {
+    position: relative;
+    width: 100%;
+    padding: 24px 10px 40px;
+    background: linear-gradient(90deg, #ffe6ec, #ffeef5, #fff8f8);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    border-bottom: 2px dashed #f9c9d5;
+    overflow: hidden;
+  }
+
+  .pastel-header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8em;
+    color: #d46f8b;
+    text-shadow: 2px 2px 6px rgba(255, 180, 195, 0.5);
+    margin: 0;
+  }
+
+  .pastel-header p {
+    color: #9c737b;
+    font-size: 1.1em;
+    font-family: 'Patrick Hand', cursive;
+    margin-top: 8px;
+  }
+
+  .hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hearts span {
+    position: absolute;
+    color: #f8b6c6;
+    font-size: 22px;
+    animation: floatHearts 6s linear infinite;
+    opacity: 0.7;
+  }
+
+  .hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
+  .hearts span:nth-child(2) { left: 50%; animation-delay: 2s; }
+  .hearts span:nth-child(3) { left: 85%; animation-delay: 4s; }
+
+  @keyframes floatHearts {
+    0% { transform: translateY(0) scale(1); opacity: 0.8; }
+    50% { transform: translateY(-25px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 0.7; }
+  }
+
